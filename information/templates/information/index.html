@@ -1,0 +1,11 @@
+{% extends 'information/layout.html' %}
+
+{% block content %}
+    <h2>Information</h2>
+    <ul>
+        {% for info in information %}
+            <li> Mr. {{ info.patientname }} - {{ info.age }} years old - sickness: {{ info.sickness }}</li>
+            
+        {% endfor %}
+    </ul>
+{% endblock %}

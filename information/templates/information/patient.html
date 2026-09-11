@@ -1,0 +1,29 @@
+{% extends 'information/layout.html' %}
+
+{% block content %}
+    <h2>معلومات المريض</h2>
+    <p>اسم المريض: {{ info.patientname }}</p>
+    <p>العمر: {{ info.age }} سنة</p>
+    <p>المرض: {{ info.sickness }}</p>
+
+    <h3>الاطباء المشرفين</h3>
+   <div dir="rtl" style="display: flex; justify-content: center; margin-top: 15px;">
+    <table style="border-collapse: collapse; width: 50%; min-width: 300px; text-align: right; font-family: sans-serif;">
+        <thead>
+            <tr style="background-color: #f2f2f2; border-bottom: 2px solid #ddd;">
+                <th style="padding: 10px; border: 1px solid #ddd;">اسم الدكتور</th>
+                <th style="padding: 10px; border: 1px solid #ddd;">الاختصاص</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for doctor in doctors %}
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; border: 1px solid #ddd;">{{ doctor.name }}</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">{{ doctor.specialization }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
