@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ["marc04.pythonanywhere.com", "localhost", "127.0.0.1"]
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',   
     'pwa',
     'tity',
     'sam',
@@ -47,6 +48,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -147,3 +149,5 @@ PWA_APP_ICONS = [
         "type": "image/png"
     }
 ]
+# إعدادات السماح للتطبيقات الخارجية بالاتصال بالسيرفر
+CORS_ALLOW_ALL_ORIGINS = True
