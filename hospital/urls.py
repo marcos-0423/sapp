@@ -25,4 +25,5 @@ urlpatterns = [
     path("shaas/",include("shaas.urls")),
     path("sam/",include("sam.urls")),
     path("tity/",include("tity.urls")),
+
 ]
